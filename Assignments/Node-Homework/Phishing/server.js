@@ -54,7 +54,7 @@ const server = http.createServer(async (req, res) => {
         let urlresult = url.replace('/', '').replace('.html', '');
         console.log(body);
 
-        res.statusCode = 302;
+        res.statusCode = 302; 
 
         res.setHeader('Location', `https://www.${urlresult}.com`); 
 
