@@ -92,7 +92,7 @@ app.delete("/products/:id", (req, res) => {
     res.status(200).json({ message: "Deleted" });
 });
 
-// Suppliers
+// Suppliers get and post method
 
 app.get('/suppliers', (req, res) => {
     res.json(db.suppliers);
@@ -116,7 +116,7 @@ app.post('/suppliers', (req, res) => {
         return res.status(400).json({ message: "Please provide name, phone number, and location for the supplier" });
     }
 
-    newSupplier.id = db.suppliers.length + 1; // Assuming ID is based on array length
+    newSupplier.id = db.suppliers.length + 1; 
     db.suppliers.push(newSupplier);
     res.status(201).json(newSupplier);
 });
